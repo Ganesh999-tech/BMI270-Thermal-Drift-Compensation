@@ -53,7 +53,7 @@ MEMS (Micro-Electro-Mechanical Systems) sensors are inherently sensitive to envi
     * Transmit processed data via HAL_UART_Transmit to the serial interface.
 
 ### 3. MATLAB Analysis
-* **Data Collection:** Logged raw telemetry via PuTTY into .csv files during "BMI_270_cold_test_" (~50°C) and "BMI_270_hot_test_" (~13°C) sessions.
+* **Data Collection:** Logged raw telemetry via PuTTY into .csv files during "BMI_270_cold_test_" (~13°C) and "BMI_270_hot_test_" (~50°C) sessions.
 * **Characterization:** Ran MATLAB scripts in the `/Results & VALIDATION` folder to perform linear regression on the bias-vs-temperature data.
 * **Calibration:** Extracted the slope (m) and offset (c) values and updated the STM32 firmware coefficients to achieve real-time thermal resilience.
 ## 📊 Results & Analysis
