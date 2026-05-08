@@ -21,8 +21,18 @@ MEMS (Micro-Electro-Mechanical Systems) sensors are inherently sensitive to envi
 * **Interface:** SPI Protocol
 * **Thermal Testbeds:** * 🔥 **Heat:** Forced convection via laptop exhaust during high-load gaming (~50°C).
     * ❄️ **Cooling:** Active cooling via DIY Thermoelectric Peltier Module (~13°C).
+* ** Hardware Connection
+* stm32h743zi---BMI270 IMU Sensor Breakout board
+   * PA5	I/O	SPI1_SCK
+   * PA6	I/O	SPI1_MISO
+   * PA7	I/O	SPI1_MOSI
+   * PB1	Output	GPIO_Output(BMI270_CS)
+   * Vcc -- 3.3V
+   * Gnd -- Gnd
+* ** Usb serial interface data
+   * PD8	I/O	USART3_TX
+   * PD9	I/O	USART3_RX
 
----
 
 ## 📊 Results & Analysis
 Telemetry was logged via **PuTTY** and processed through a custom **MATLAB** robust-filtering pipeline.
