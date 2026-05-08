@@ -1,1 +1,50 @@
-BMI270 Thermal Drift Compensation & Calibration🚀 STM32H7 Firmware | MATLAB Data Analytics | MEMS Packaging PhysicsThis repository contains a full-stack engineering solution for mitigating thermal drift in the Bosch BMI270 IMU. By correlating internal die temperature with sensor bias, I implemented a real-time compensation algorithm on an STM32H743ZI to ensure navigation stability across a 37°C thermal gradient.📌 Project OverviewMEMS (Micro-Electro-Mechanical Systems) sensors are physically affected by temperature. This project maps those physical changes to mathematical models to "zero out" errors in real-time.Key Engineering Challenges:Thermomechanical Stress: CTE mismatch between the silicon die and the breakout board package.Zero-Rate Output (ZRO) Drift: Temperature-induced shifts in the mechanical stiffness of internal silicon structures.Sensitivity Shift: Variations in accelerometer gain due to thermal expansion.🛠️ Hardware SetupMicrocontroller: Nucleo-H743ZI2 (ARM Cortex-M7 @ 480MHz).Sensor: BMI270 6-Axis IMU (Breakout Board).Interface: SPI Protocol.Thermal Testbeds: * Heat: Laptop exhaust during high-load PC gaming (~50°C).Cooling: DIY Thermoelectric Peltier Module (~13°C).📊 Results & AnalysisThe data was logged via PuTTY and processed using a custom MATLAB pipeline.1. Gyroscope Thermal Bias DriftWe identified a linear relationship between temperature and bias.Gyro X Coefficient: 0.019127 dps/°CGyro Y Coefficient: 0.012860 dps/°CGyro Z Coefficient: -0.001489 dps/°C (Most Stable)2. Accelerometer ValidationUsing Vector Magnitude ($G_{tot}$), we validated sensor integrity across different physical orientations.Thermal Sensitivity Shift: 1.99%Range Verification: Confirmed $\pm8g$ default initialization (4096 LSB/g).📂 Repository Structure/Firmware: STM32H7 source code, including the SPI driver and the linear compensation math./Analytics: MATLAB scripts (.m) used for linear regression and colourful data visualization./Data_Logs: Raw telemetry CSV files from the Cold and Hot experiments./Documentation: Essential datasheets and my research notes on MEMS Packaging & Materials (CTE, Young's Modulus, Doping)./Results: High-resolution plots showing the drift characterization.🎓 Academic ContextThis project was developed as part of my studies at the University of Shanghai for Science and Technology (USST). It applies principles of Advanced Microelectronic Packaging, focusing on how material science (Silicon crystal structures, thermal expansion) impacts signal processing in embedded systems.📜 LicenseThis project is licensed under the MIT License.
+# BMI270 Thermal Drift Compensation & Calibration
+### 🚀 STM32H7 Firmware | MATLAB Data Analytics | MEMS Packaging Physics
+
+This repository contains a full-stack engineering solution for mitigating thermal drift in the **Bosch BMI270 IMU**. By correlating internal die temperature with sensor bias, I implemented a real-time compensation algorithm on an **STM32H743ZI** to ensure navigation stability across a 37°C thermal gradient.
+
+---
+
+## 📌 Project Overview
+MEMS (Micro-Electro-Mechanical Systems) sensors are inherently sensitive to environmental temperature. This project maps physical hardware deformations to mathematical models to "zero out" sensor errors in real-time.
+
+### Key Engineering Challenges
+* **Thermomechanical Stress:** **CTE (Coefficient of Thermal Expansion) mismatch** between the silicon die, the adhesive, and the breakout board package causes structural warping.
+* **Zero-Rate Output (ZRO) Drift:** Temperature-induced shifts in the **Young’s Modulus** (mechanical stiffness) of the internal silicon comb structures.
+* **Sensitivity Shift:** Variations in accelerometer gain (Scale Factor) due to thermal expansion affecting capacitive gaps.
+
+---
+
+## 🛠️ Hardware Setup
+* **Microcontroller:** Nucleo-H743ZI2 (ARM Cortex-M7 @ 480MHz)
+* **Sensor:** BMI270 6-Axis IMU (Chinese Breakout Board)
+* **Interface:** SPI Protocol
+* **Thermal Testbeds:** * 🔥 **Heat:** Forced convection via laptop exhaust during high-load gaming (~50°C).
+    * ❄️ **Cooling:** Active cooling via DIY Thermoelectric Peltier Module (~13°C).
+
+---
+
+## 📊 Results & Analysis
+Telemetry was logged via **PuTTY** and processed through a custom **MATLAB** robust-filtering pipeline.
+
+### 1. Gyroscope Thermal Bias Drift
+We identified a strong linear correlation between temperature and bias ($y = mx + c$).
+* **Gyro X Coefficient:** `0.019127 dps/°C`
+* **Gyro Y Coefficient:** `0.012860 dps/°C`
+* **Gyro Z Coefficient:** `-0.001489 dps/°C` (Most Stable axis)
+
+### 2. Accelerometer Validation
+Using **Vector Magnitude ($G_{tot}$)**, sensor integrity was validated across different physical orientations to isolate thermal sensitivity from positional gravity.
+* **Thermal Sensitivity Shift:** `1.99%`
+* **Range Verification:** Confirmed ±8g default initialization (4096 LSB/g).
+
+---
+
+## 📂 Repository Structure
+```text
+├── Core/       # STM32 source code, SPI driver, and compensation logic.
+├── Debug/      # MATLAB scripts (.m) for linear regression and visualization.
+├── Drivers/      # Raw telemetry CSVs (Cold Environment vs. Hot Environment).
+├── Results & VALIDATION/        # High-resolution colourful plots and setup photographs.
+├── Documentation/  # Datasheets, RM0433, PM0253, and MEMS Packaging research notes.
+└── README.md       # Project documentation.
