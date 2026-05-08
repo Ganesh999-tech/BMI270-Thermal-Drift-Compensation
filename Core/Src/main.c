@@ -72,6 +72,7 @@ static void MPU_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_USART3_UART_Init(void);
+float BMI270_ReadTemp(void);
 /* USER CODE BEGIN PFP */
 void BMI270_WriteReg(uint8_t reg, uint8_t data);
 #ifdef __GNUC__
@@ -246,6 +247,7 @@ int main(void)
 
           // 2. Read 12 bytes starting from Register 0x0C (Accel + Gyro data)
           if (user_spi_read(0x0C, sensor_data, 12, NULL) == 0) {
+        	  float current_temp = BMI270_ReadTemp();
 
               // Convert to signed 16-bit integers
               int16_t acc_x_raw = (int16_t)((sensor_data[1] << 8) | sensor_data[0]);
@@ -267,8 +269,8 @@ int main(void)
 
               // RECTIFICATION: Python script expects 7 values (temp + 6 sensor values)
               // Using a placeholder 25.0 for temp since get_bmi270_temp prototype was missing
-              printf("25.0,%.3f,%.3f,%.3f,%.2f,%.2f,%.2f\r\n",
-                     g_x, g_y, g_z, dps_x, dps_y, dps_z);
+              printf("%2f,%.3f,%.3f,%.3f,%.2f,%.2f,%.2f\r\n",
+                     current_temp,g_x, g_y, g_z, dps_x, dps_y, dps_z);
           }
 
           HAL_Delay(20); // 50Hz for smooth VPython animation
@@ -466,6 +468,21 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+float BMI270_ReadTemp(void) {
+    uint8_t temp_data[2];
+    // BMI270 Temperature registers are 0x22 (LSB) and 0x23 (MSB)
+    if (user_spi_read(0x22, temp_data, 2, NULL) == 0) {
+        int16_t raw_temp = (int16_t)((temp_data[1] << 8) | temp_data[0]);
+
+        /*
+         * Bosch Formula:
+         * temperature_value = (raw_temp_signed / 512) + 23
+         * Each LSB is 0.001953125 degrees Celsius.
+         */
+        return ((float)raw_temp / 512.0f) + 23.0f;
+    }
+    return 0.0f;
+}
 void BMI270_WriteReg(uint8_t reg, uint8_t data) {
     HAL_GPIO_WritePin(BMI270_CS_GPIO_Port, BMI270_CS_Pin, GPIO_PIN_RESET); // CS LOW
     HAL_SPI_Transmit(&hspi1, &reg, 1, 100);              // Send Reg Address
