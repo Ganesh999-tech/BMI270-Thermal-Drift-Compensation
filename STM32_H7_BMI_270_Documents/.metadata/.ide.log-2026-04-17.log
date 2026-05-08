@@ -1,0 +1,54 @@
+2026-04-17 09:33:08,666 [INFO] Activator:176 - 
+
+
+2026-04-17 09:33:08,674 [INFO] Activator:177 - !SESSION log4j initialized
+2026-04-17 09:33:15,116 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-17 10:09:25,756 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2026-04-17 10:18:36,907 [INFO] Activator:176 - 
+
+
+2026-04-17 10:18:36,910 [INFO] Activator:177 - !SESSION log4j initialized
+2026-04-17 10:18:42,994 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-17 10:22:22,686 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2026-04-17 10:41:03,878 [INFO] Activator:176 - 
+
+
+2026-04-17 10:41:03,880 [INFO] Activator:177 - !SESSION log4j initialized
+2026-04-17 10:41:11,215 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-17 12:04:10,003 [INFO] Activator:176 - 
+
+
+2026-04-17 12:04:10,008 [INFO] Activator:177 - !SESSION log4j initialized
+2026-04-17 12:04:18,034 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-17 12:16:32,021 [INFO] Activator:176 - 
+
+
+2026-04-17 12:16:32,024 [INFO] Activator:177 - !SESSION log4j initialized
+2026-04-17 12:16:38,801 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-17 12:17:40,557 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2026-04-17 12:18:42,706 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2026-04-17 12:37:23,457 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2026-04-17 13:14:07,888 [INFO] Activator:176 - 
+
+
+2026-04-17 13:14:07,892 [INFO] Activator:177 - !SESSION log4j initialized
+2026-04-17 13:14:15,581 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-17 13:15:31,495 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2026-04-17 13:15:40,599 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2026-04-17 13:15:42,612 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2026-04-17 13:44:12,063 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2026-04-17 13:50:10,373 [ERROR] ConfigurationRetriever:142 - IOException on connection: Read timed out
+2026-04-17 14:14:14,771 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2026-04-17 14:16:49,936 [INFO] Activator:176 - 
+
+
+2026-04-17 14:16:49,939 [INFO] Activator:177 - !SESSION log4j initialized
+2026-04-17 14:16:56,763 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-17 14:18:04,069 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2026-04-17 14:21:28,947 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Connect timed out
+2026-04-17 14:21:28,947 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Connect timed out
+2026-04-17 14:21:28,947 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Connect timed out
+2026-04-17 14:21:28,947 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Connect timed out
+2026-04-17 14:21:28,947 [ERROR] AdobePublisher:162 - Exception while opening the connection: java.net.SocketTimeoutException: Connect timed out
+2026-04-17 18:47:43,117 [ERROR] ConfigurationRetriever:142 - IOException on connection: Connect timed out
+2026-04-17 18:47:50,287 [ERROR] AdobePublisher:187 - Exception while getting the server answer: java.net.SocketTimeoutException: Read timed out

@@ -1,0 +1,12 @@
+10:47:54 **** Incremental Build of configuration Debug for project 0_test ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DSTM32H743ZITx -DSTM32 -DSTM32H7SINGLE -DSTM32H7 -c -I../Inc -I"C:/Users/ganes/Documents/STM32_H7_Documents/0_test/chip_headers/CMSIS/Include" -I"C:/Users/ganes/Documents/STM32_H7_Documents/0_test/chip_headers/CMSIS/Device/ST/STM32H7xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from ../Src/main.c:1:
+C:/Users/ganes/Documents/STM32_H7_Documents/0_test/chip_headers/CMSIS/Device/ST/STM32H7xx/Include/stm32h7xx.h:166:3: error: #error "Please select first the target STM32H7xx device used in your application (in stm32h7xx.h file)"
+  166 |  #error "Please select first the target STM32H7xx device used in your application (in stm32h7xx.h file)"
+      |   ^~~~~
+make: *** [Src/subdir.mk:25: Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+10:47:55 Build Failed. 2 errors, 0 warnings. (took 286ms)
+

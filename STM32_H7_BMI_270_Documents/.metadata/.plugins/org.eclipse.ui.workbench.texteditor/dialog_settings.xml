@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<item key="replaceBarOpen" value="false"/>
+	<list key="searchhistory">
+		<item value="while"/>
+		<item value="pfp"/>
+		<item value="user_spi_read"/>
+		<item value="6"/>
+		<item value="MX"/>
+		<item value="GPIO_in"/>
+		<item value="MX_USART"/>
+		<item value="bmi270_config.h"/>
+		<item value="HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);"/>
+		<item value="hal_gpio_write"/>
+		<item value="WHILE"/>
+		<item value="WHILW"/>
+		<item value="SPI_PO"/>
+		<item value="HAL_SPI_Receive"/>
+		<item value="uint8_t regAddr = BMI270_CHIP_ID_ADDR"/>
+	</list>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="364"/>
+		<item key="DIALOG_Y_ORIGIN" value="146"/>
+		<item key="DIALOG_WIDTH" value="322"/>
+		<item key="DIALOG_HEIGHT" value="398"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

@@ -1,0 +1,10 @@
+10:48:00 **** Incremental Build of configuration Debug for project BMI270_Test ****
+make -j8 all 
+arm-none-eabi-size  BMI270_Test.elf 
+   text	   data	    bss	    dec	    hex	filename
+  51972	    472	   2208	  54652	   d57c	BMI270_Test.elf
+Finished building: default.size.stdout
+ 
+
+10:48:00 Build Finished. 0 errors, 0 warnings. (took 322ms)
+
