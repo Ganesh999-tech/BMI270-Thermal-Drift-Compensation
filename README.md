@@ -33,7 +33,29 @@ MEMS (Micro-Electro-Mechanical Systems) sensors are inherently sensitive to envi
    * PD8	I/O	USART3_TX
    * PD9	I/O	USART3_RX
 
+## 📝 Implementation Procedure
 
+### 1. STM32CubeMX Configuration
+* **Clock Configuration:** Set HCLK to 480 MHz for maximum performance on the Cortex-M7 core.
+* **SPI1 Setup:** * Mode: Full-Duplex Master.
+    * Hardware CS: Disabled (Software Chip Select handled via PB1).
+    * Data Size: 8 Bits | First Bit: MSB First.
+    * Prescaler: Adjusted for a stable baud rate (Target: 10-20 MBits/s).
+* **USART3 Setup:** Asynchronous mode configured for high-speed telemetry data logging.
+* **GPIO Setup:** Set PB1 as GPIO_Output (Pull-up, High by default) to act as the SPI Slave Select.
+
+### 2. STM32CubeIDE Development
+* **Driver Implementation:** Developed a custom low-level SPI driver to initialize the BMI270 into Normal Mode and verify Chip ID.
+* **Range Configuration:** Configured Accelerometer to ±8g and Gyroscope to 2000 dps for high-dynamic range testing.
+* **Telemetry Loop:** * Read Raw Hex data from sensor registers.
+    * Convert raw bits to float values using LSB sensitivity constants.
+    * Apply Linear Regression coefficients (y = mx + c) directly to the raw stream in firmware.
+    * Transmit processed data via HAL_UART_Transmit to the serial interface.
+
+### 3. MATLAB Analysis
+* **Data Collection:** Logged raw telemetry via PuTTY into .csv files during "BMI_270_cold_test_" (~50°C) and "BMI_270_hot_test_" (~13°C) sessions.
+* **Characterization:** Ran MATLAB scripts in the `/Results & VALIDATION` folder to perform linear regression on the bias-vs-temperature data.
+* **Calibration:** Extracted the slope (m) and offset (c) values and updated the STM32 firmware coefficients to achieve real-time thermal resilience.
 ## 📊 Results & Analysis
 Telemetry was logged via **PuTTY** and processed through a custom **MATLAB** robust-filtering pipeline.
 
