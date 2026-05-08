@@ -43,8 +43,8 @@ Using **Vector Magnitude ($G_{tot}$)**, sensor integrity was validated across di
 ## 📂 Repository Structure
 ```text
 ├── Core/       # STM32 source code, SPI driver, and compensation logic.
-├── Debug/      # MATLAB scripts (.m) for linear regression and visualization.
-├── Drivers/      # Raw telemetry CSVs (Cold Environment vs. Hot Environment).
+├── Debug/      # BMI
+├── Drivers/      #CMSIS, STM32H7_Hal_driver 
 ├── Results & VALIDATION/        # High-resolution colourful plots and setup photographs.
 ├── Documentation/  # Datasheets, RM0433, PM0253, and MEMS Packaging research notes.
 └── README.md       # Project documentation.
